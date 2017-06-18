@@ -131,5 +131,34 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
+<script>
+    var socket = io.connect('http://localhost:3000');
+    socket.on('message', function (data) {
+        data = jQuery.parseJSON(data);
+        console.log(data.user);
+        $( "#messages" ).append( "<strong>"+data.user+":</strong><p>"+data.message+"</p>" );
+    });
+    $(".send-msg").click(function(e){
+        e.preventDefault();
+        var token = $("input[name='_token']").val();
+        var user = $("input[name='user']").val();
+        var msg = $(".msg").val();
+        if(msg != ''){
+            $.ajax({
+                type: "POST",
+                url: '{!! URL::to("sendmessage") !!}',
+                dataType: "json",
+                data: {'_token':token,'message':msg,'user':user},
+                success:function(data){
+                    console.log(data);
+                    $(".msg").val('');
+                }
+            });
+        }else{
+            alert("Please Add Message.");
+        }
+    })
+</script>
 </body>
 </html>
