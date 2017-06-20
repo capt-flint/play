@@ -25,4 +25,10 @@ Route::get('/user/{user}', 'UserController@index')->name('user-profile');
 Route::post('/user/add-friends', 'UserController@addFriend')->name('add-friend');
 
 Route::post('/sendmessage', 'MessageController@sendMessage');
-Route::get('/group/{id}', 'GroupController@show');
+
+Route::get('/group/{id}', 'GroupController@show')->name('group');
+Route::get('/group/{id}/edit', 'GroupController@edit')->name('group-edit');
+Route::get('/groups', 'GroupController@index')->name('groups');
+
+Route::post('/group/update', 'GroupController@update')->name('group-update');
+Route::post('/group/join', 'GroupController@joinGroup')->name('join-group');

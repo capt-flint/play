@@ -43,11 +43,11 @@
                                 Friends
                                 <span class="caret"></span>
                             </button>
-                                                    <form method="post" action="{{ route('add-friend') }}">
+                            <form method="post" action="{{ route('add-friend') }}">
                             {!! csrf_field() !!}
-                                                        <input type="hidden" name="friend" value="{{$user->id}}"/>
-                            <button type="submit">Add friend</button>
-                        </form>
+                                <input type="hidden" name="friend" value="{{$user->id}}"/>
+                                <button type="submit">Add friend</button>
+                            </form>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a href="#">Familly</a></li>
                                 <li><a href="#"><i class="fa fa-fw fa-check" aria-hidden="true"></i> Friends</a></li>

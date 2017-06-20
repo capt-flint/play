@@ -39,7 +39,7 @@
                     @else
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="./ORqmj">Stream</a></li>
+                                <li><a href="{{route('groups')}}">Groups</a></li>
                                 <li><a href="#">My Activity</a></li>
                                 <li><span class="badge badge-important">2</span><a href="#"><i
                                                 class="fa fa-bell-o fa-lg"
