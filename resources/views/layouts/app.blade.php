@@ -131,7 +131,7 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 <script>
     var socket = io.connect('http://localhost:3000');
     socket.on('message', function (data) {
