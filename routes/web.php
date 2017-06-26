@@ -23,9 +23,12 @@ Route::post('/user/add-friends', 'UserController@addFriend')->name('add-friend')
 
 Route::post('/sendmessage', 'MessageController@sendMessage');
 
-Route::get('/group/{id}', 'GroupController@show')->name('group');
-Route::get('/group/{id}/edit', 'GroupController@edit')->name('group-edit');
 Route::get('/groups', 'GroupController@index')->name('groups');
 
-Route::post('/group/update', 'GroupController@update')->name('group-update');
-Route::post('/group/join', 'GroupController@joinGroup')->name('join-group');
+Route::post('/groups/update', 'GroupController@update')->name('groups-update');
+Route::get('/groups/create', 'GroupController@create')->name('groups-create');
+Route::post('/groups/create', 'GroupController@store')->name('groups-store');
+Route::post('/groups/join', 'GroupController@joinGroup')->name('groups-join');
+
+Route::get('/groups/{group}', 'GroupController@show')->name('group');
+Route::get('/groups/{group}/edit', 'GroupController@edit')->name('groups-edit');

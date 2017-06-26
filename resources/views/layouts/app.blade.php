@@ -20,7 +20,7 @@
     <div class="navbar-wrapper">
         <div class="container-fluid">
             <div class="navbar navbar-default navbar-static-top" role="navigation">
-                <div class="container-fluid">
+                <div >
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse"
                                 data-target=".navbar-collapse">
@@ -133,12 +133,12 @@
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 <script>
-    var socket = io.connect('http://localhost:3000');
-    socket.on('message', function (data) {
-        data = jQuery.parseJSON(data);
-        console.log(data.user);
-        $( "#messages" ).append( "<strong>"+data.user+":</strong><p>"+data.message+"</p>" );
-    });
+//    var socket = io.connect('http://localhost:3000');
+//    socket.on('message', function (data) {
+//        data = jQuery.parseJSON(data);
+//        console.log(data.user);
+//        $( "#messages" ).append( "<strong>"+data.user+":</strong><p>"+data.message+"</p>" );
+//    });
     $(".send-msg").click(function(e){
         e.preventDefault();
         var token = $("input[name='_token']").val();

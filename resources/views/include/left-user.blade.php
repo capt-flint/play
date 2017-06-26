@@ -7,6 +7,7 @@
                     <img class="thumbnail img-responsive"
                          src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="300px" height="300px">
                 </div>
+                <div>Добавить в друзья</div>
                 <div class="media-body">
                     <hr>
                     <h3><strong>Bio</strong></h3>
@@ -17,7 +18,7 @@
                     <p>Earth</p>
                     <hr>
                     <h3><strong>Gender</strong></h3>
-                    <p>My</p>
+                    <p>Bat</p>
                     <hr>
                     <h3><strong>Age</strong></h3>
                     @if($user->profile)

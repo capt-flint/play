@@ -22,13 +22,38 @@ class GroupController extends Controller
 
     /**
      * Show group
-     * @param $id
+     * @param Group $group
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($id)
+    public function show(Group $group)
     {
-        $group = Group::find($id);
         return view('group.view', ['group' => $group]);
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function create()
+    {
+        return view('group.create');
+    }
+
+    /**
+     * Save group
+     * @param Request $request
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request, ['name' => 'required', 'image' => 'image|mimes:jpeg,bmp,png']);
+
+        $group = new Group();
+        $group->name = $request->name;
+        $group->description = $request->description;
+        $group->image = $request->image->store('photos');
+
+        $group->save();
+
+        return redirect('groups');
     }
 
     /**
@@ -64,7 +89,7 @@ class GroupController extends Controller
      */
     public function joinGroup(Request $request)
     {
-        $validator = $this->validate($request, ['id' => 'required|int']);
+        $this->validate($request, ['id' => 'required|int']);
         $group = Group::find($request->id);
         $group->users()->attach(Auth::id(), ['status' => 0]);
         return redirect()->back();
