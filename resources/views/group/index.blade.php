@@ -3,7 +3,7 @@
 @section('content')
     <div class="mainbody container-fluid">
         <div class="row">
-        <div style="padding-top: 50px;">&nbsp;</div>
+            <div style="padding-top: 50px;">&nbsp;</div>
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Groups</div>
