@@ -6,7 +6,7 @@
             <div style="padding-top: 50px;">&nbsp;</div>
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Groups</div>
+                    <div class="panel-heading">Группы</div>
                     <div class="btn-group pull-right">
                         <a href="{{route('groups-create')}}" class="btn btn-primary">
                             Создать группу

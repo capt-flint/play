@@ -11,8 +11,13 @@
 |
 */
 
+Route::get('login', 'LoginController@index')->name('login');
+Route::post('login', 'LoginController@login');
+Route::get('logout', 'LoginController@logout')->name('logout');
 
-Auth::routes();
+
+Route::get('register', 'RegisterController@index')->name('register');
+Route::post('register', 'RegisterController@register');
 
 Route::get('/', 'HomeController@index')->name('home');
 
