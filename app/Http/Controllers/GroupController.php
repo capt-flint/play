@@ -49,7 +49,9 @@ class GroupController extends Controller
         $group = new Group();
         $group->name = $request->name;
         $group->description = $request->description;
-        $group->image = $request->image->store('photos');
+        $request->image->store('public\groups');
+
+        $group->image = $request->image->hashName();
 
         $group->save();
 

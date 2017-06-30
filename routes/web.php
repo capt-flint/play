@@ -37,3 +37,5 @@ Route::post('/groups/join', 'GroupController@joinGroup')->name('groups-join');
 
 Route::get('/groups/{group}', 'GroupController@show')->name('group');
 Route::get('/groups/{group}/edit', 'GroupController@edit')->name('groups-edit');
+
+Route::post('/posts/create', 'PostController@store')->name('post-create');
