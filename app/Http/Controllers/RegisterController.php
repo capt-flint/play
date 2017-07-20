@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\EventRegister;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Event;
 
 class RegisterController extends Controller
 {
@@ -39,6 +41,8 @@ class RegisterController extends Controller
         ]);
 
         auth()->login($user);
+
+        Event::fire(new EventRegister($user));
 
         return redirect()->home();
     }
