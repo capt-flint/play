@@ -4,12 +4,11 @@ namespace App\Listeners;
 
 use App\Events\EventRegister;
 use App\Mail\Welcome;
-use App\User;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Mail;
 
-class EventRegisterListener
+class EventRegisterListener implements ShouldQueue
 {
     /**
      * Create the event listener.
